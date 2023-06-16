@@ -1,0 +1,29 @@
+.navBar {
+  transform: translateY(13%);
+}
+
+.in {
+  animation: in 1s forwards;
+}
+
+@keyframes in {
+  0% {
+    transform: translateY(13%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.out {
+  animation: out 1s forwards;
+}
+
+@keyframes in {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(13%);
+  }
+}

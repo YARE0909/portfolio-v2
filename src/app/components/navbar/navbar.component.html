@@ -1,0 +1,54 @@
+<!-- Desktop Navbar -->
+<div class="font-SpaceGrotesk">
+  <div
+    *ngIf="navBar"
+    class="absolute top-0 bottom-9 left-0 right-9 lg:flex lg:flex-col justify-end lg:items-end pb-3 overflow-auto text-c2 hidden"
+  >
+    <div>
+      <a
+        routerLink=""
+        class="text-[3vw] lg:text-[5vw] opacity-10 tracking-[25px] font-SpaceGrotesk hover:opacity-100 duration-300"
+      >
+        HOME
+      </a>
+    </div>
+    <div>
+      <a
+        routerLink="about"
+        class="text-[3vw] lg:text-[5vw] opacity-10 tracking-[25px] font-SpaceGrotesk hover:opacity-100 duration-300"
+      >
+        ABOUT
+      </a>
+    </div>
+    <div>
+      <a
+        routerLink="skills"
+        class="text-[3vw] lg:text-[5vw] opacity-10 tracking-[25px] font-SpaceGrotesk hover:opacity-100 duration-300"
+      >
+        SKILLS
+      </a>
+    </div>
+    <div>
+      <a
+        routerLink="contact"
+        class="text-[3vw] lg:text-[5vw] opacity-10 tracking-[25px] font-SpaceGrotesk hover:opacity-100 duration-300"
+      >
+        CONTACT
+      </a>
+    </div>
+  </div>
+  <div class="absolute top-9 right-9 text-4xl p-9 text-c2 hidden lg:block">
+    <div
+      class="w-fit h-fit cursor-pointer opacity-10 hover:opacity-100 duration-300"
+      (click)="setNavbar()"
+    >
+      <div *ngIf="!navBar">
+        <fa-icon [icon]="menu"></fa-icon>
+      </div>
+      <div *ngIf="navBar">
+        <fa-icon [icon]="close"></fa-icon>
+      </div>
+    </div>
+  </div>
+</div>
+
