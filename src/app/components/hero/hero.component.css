@@ -53,10 +53,10 @@
 .gradient {
   background: linear-gradient(
     -45deg,
-    #ff3c0030,
-    #f8448930,
-    #46c9f830,
-    #00ffc330
+    #ff087930,
+    #ff08d530,
+    #10cafa30,
+    #1070fa30
   );
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;

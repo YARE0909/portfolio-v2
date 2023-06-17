@@ -27,3 +27,17 @@
     transform: translateY(13%);
   }
 }
+
+.child {
+  display: none;
+  opacity: 10;
+}
+
+.parent:hover .child:hover {
+  opacity: 1;
+}
+
+.parent:hover .child {
+  display: block;
+  opacity: 0.1;
+}

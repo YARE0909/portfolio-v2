@@ -1,1 +1,30 @@
-<p>contact works!</p>
+<div class="w-full h-screen bg-c1 md:p-9 relative font-EncodeSansSC text-c2">
+  <!-- Background Animation -->
+  <div class="anim"></div>
+  <!-- Desktop Socials -->
+  <div
+    class="absolute bg-transparent w-[50px] h-screen gap-5 top-0 left-0 pb-8 pr-5 text-c2 text-2xl hidden md:block z-30"
+  >
+    <div class="w-full h-full flex flex-col gap-2 justify-end">
+      <div class="self-end">
+        <a
+          href="https://www.linkedin.com/in/pradyumna-d-95a88123b/"
+          target="_blank"
+        >
+          <fa-icon [icon]="linkedIn"></fa-icon>
+        </a>
+      </div>
+      <div class="self-end">
+        <a href="https://github.com/YARE0909" target="_blank">
+          <fa-icon [icon]="gitHub"></fa-icon>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    class="w-full h-full border-[1px] border-gray-500 p-8 text-c2 gradient overflow-hidden hidden md:block relative"
+  >
+    <p>contact works!</p>
+  </div>
+  <app-navbar></app-navbar>
+</div>
