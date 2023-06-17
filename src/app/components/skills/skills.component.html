@@ -1,10 +1,37 @@
-<div class="w-full h-screen bg-c1 p-4 md:p-9 relative font-EncodeSansSC text-c2">
-  <!-- Background Animation -->
-  <div class="anim"></div>
+<div
+  class="w-full h-screen bg-c1 p-4 md:p-9 relative font-EncodeSansSC text-c2"
+>
   <div
     class="w-full h-full border-[1px] border-gray-500 p-8 text-c2 gradient overflow-hidden relative"
   >
-    <p>skills works!</p>
+    <div class="top-4 left-4">
+      <h1 class="font-bold text-4xl lg:text-8xl">What Can I Do?</h1>
+    </div>
+    <!-- Desktop View -->
+    <div class="hidden lg:block">
+      <div class="container">
+        <div *ngFor="let skill of skills" class="card">
+          <h3 class="title text-3xl font-bold">{{ skill.skill }}</h3>
+          <div class="bar">
+            <div class="emptybar"></div>
+            <div class="filledbar"></div>
+          </div>
+          <div class="w-full h-full flex items-center justify-center pt-28">
+            <img src="{{ skill.icon }}" alt="{{ skill.skill }}" class="w-56" />
+          </div>
+        </div>
+      </div>
+      <div class="absolute bottom-6 left-6 w-[55vw]">
+        <h1 class="text-3xl font-bold opacity-85">
+          The aforementioned examples merely scratch the surface of my
+          multifaceted skill set. I proficiently navigate a diverse array of
+          programming languages and demonstrate an exceptional aptitude for
+          rapid acquisition and assimilation of new knowledge.
+        </h1>
+      </div>
+    </div>
+    <!-- Mobile View -->
+    <div class="lg:hidden w-full h-full flex justify-center"></div>
   </div>
   <app-navbar></app-navbar>
 </div>
