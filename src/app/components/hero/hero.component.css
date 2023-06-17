@@ -53,10 +53,10 @@
 .gradient {
   background: linear-gradient(
     -45deg,
-    #ff087930,
-    #ff08d530,
-    #10cafa30,
-    #1070fa30
+    #c175dd40,
+    #b86ccd40,
+    #23bff440,
+    #0076df40
   );
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
@@ -99,4 +99,8 @@
     opacity: 0%;
     display: none;
   }
+}
+
+.textShadow {
+  text-shadow: 5px 0px 10px #000000;
 }

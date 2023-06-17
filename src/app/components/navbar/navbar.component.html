@@ -7,13 +7,13 @@
       <div *ngFor="let navOption of currentNavOption">
         <a
           routerLink="/{{ navOption.path }}"
-          class="text-[3vw] lg:text-[5vw] opacity-10 tracking-[25px] font-SpaceGrotesk hover:opacity-100 duration-100 hover:text-[6vw] child"
+          class="text-[2vw] lg:text-[2vw] opacity-10 tracking-[25px] font-SpaceGrotesk hover:opacity-100 duration-100 hover:text-[3vw] child"
         >
           {{ navOption.name }}
         </a>
       </div>
       <h1
-        class="text-[3vw] lg:text-[5vw] opacity-10 tracking-[25px] font-SpaceGrotesk hover:opacity-100 duration-100 cursor-default"
+        class="text-[2vw] lg:text-[2vw] opacity-10 tracking-[25px] font-SpaceGrotesk hover:opacity-100 duration-100 cursor-default"
       >
         {{ routeName[0].name }}
       </h1>
