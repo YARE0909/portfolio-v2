@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -23,12 +23,13 @@ import { NavbarComponent } from './components/navbar/navbar.component';
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      {path: '', component: HeroComponent},
-      {path: 'about', component: AboutComponent},
-      {path: 'skills', component: SkillsComponent},
-      {path: 'contact', component: ContactComponent},
+      {path: '', component: HeroComponent, data: { animationState: 'One' }},
+      {path: 'about', component: AboutComponent, data: { animationState: 'Two' }},
+      {path: 'skills', component: SkillsComponent, data: { animationState: 'Three' }},
+      {path: 'contact', component: ContactComponent, data: { animationState: 'Four' }},
     ]),
-    FontAwesomeModule
+    FontAwesomeModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
