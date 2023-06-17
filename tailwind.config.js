@@ -10,6 +10,7 @@ module.exports = {
       fontFamily: {
         EncodeSansSC: ["Encode Sans SC"],
         Merienda: ["Merienda"],
+        Roboto: ["Roboto"],
         SpaceGrotesk: ["Space Grotesk"],
       },
     },

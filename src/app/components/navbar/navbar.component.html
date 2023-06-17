@@ -1,22 +1,20 @@
 <!-- Desktop Navbar -->
-<div class="font-SpaceGrotesk z-40">
   <div
-    class="absolute top-0 bottom-9 left-0 right-9 lg:flex lg:flex-col justify-end lg:items-end pb-3 overflow-auto text-c2 hidden"
+    class="absolute top-0 bottom-9 left-0 right-9 md:flex md:flex-col justify-end md:items-end pb-3 overflow-auto text-c2 hidden font-SpaceGrotesk z-50"
   >
     <div class="parent flex flex-col items-end w-fit h-fit">
       <div *ngFor="let navOption of currentNavOption">
         <a
           routerLink="/{{ navOption.path }}"
-          class="text-[2vw] lg:text-[2vw] opacity-10 tracking-[25px] font-SpaceGrotesk hover:opacity-100 duration-100 hover:text-[3vw] child"
+          class="md:text-[4vw] lg:text-[2vw] opacity-20 tracking-[25px] font-SpaceGrotesk lg:hover:opacity-100 duration-100 lg:hover:text-[3vw] child"
         >
           {{ navOption.name }}
         </a>
       </div>
       <h1
-        class="text-[2vw] lg:text-[2vw] opacity-10 tracking-[25px] font-SpaceGrotesk hover:opacity-100 duration-100 cursor-default"
+        class="md:text-[4vw] lg:text-[2vw] opacity-20 tracking-[25px] font-SpaceGrotesk lg:hover:opacity-100 duration-100 cursor-default"
       >
         {{ routeName[0].name }}
       </h1>
     </div>
   </div>
-</div>
