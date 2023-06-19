@@ -3,15 +3,17 @@
     class="w-full h-full border-[1px] p-8 border-gray-500 text-c2 gradient overflow-hidden relative"
   >
     <div class="h-full w-full flex flex-col gap-4 lg:gap-15 overflow-auto">
+      <!-- Desktop View -->
       <div class="hidden lg:block">
         <a
           *ngFor="let project of projects"
-          class="text-4xl lg:text-9xl font-bold opacity-40 tracking-wide hover:opacity-100 duration-500"
+          class="text-4xl lg:text-9xl font-bold opacity-20 tracking-wide hover:opacity-100 duration-500"
           href="{{ project.link }}"
           target="_blank"
           >{{ project.project }}</a
         >
       </div>
+      <!-- Mobile View -->
       <div *ngFor="let project of projects" class="lg:hidden">
         <a
           class="text-4xl lg:text-9xl font-bold opacity-50 tracking-wide hover:opacity-100 duration-500"

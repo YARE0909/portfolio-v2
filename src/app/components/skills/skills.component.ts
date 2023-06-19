@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
@@ -7,6 +8,9 @@ import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent {
+  constructor(private titleService:Title) {
+    this.titleService.setTitle("Skills");
+  }
   linkedIn = faLinkedinIn;
   gitHub = faGithub;
   skill: boolean = false;
