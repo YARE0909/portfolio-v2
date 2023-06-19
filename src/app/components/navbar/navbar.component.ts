@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { Router, Event, NavigationStart, NavigationEnd, NavigationError} from '@angular/router';
+import { Router } from '@angular/router';
 import { navOptionsInterface } from 'src/interfaces/navOptionsInterface';
 import { Location } from '@angular/common';
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -13,6 +15,10 @@ export class NavbarComponent {
   currentRoute!:string;
   routeName!:any;
   currentNavOption!: navOptionsInterface[];
+  menuIcon = faBars;
+  xMarkIcon = faXmark;
+  mobileNav: boolean = false;
+
   ngOnInit() {
     this.currentRoute = this.location.path();
     this.routeName = this.navOptions.filter(x => x.path === this.currentRoute.slice(1));
@@ -22,6 +28,10 @@ export class NavbarComponent {
     {
       name: 'CONTACT',
       path: 'contact',
+    },
+    {
+      name: 'PROJECTS',
+      path: 'projects',
     },
     {
       name: 'SKILLS',
@@ -36,4 +46,8 @@ export class NavbarComponent {
       path: '',
     },
   ];
+
+  setMobileNav() {
+    this.mobileNav = !this.mobileNav;
+  }
 }

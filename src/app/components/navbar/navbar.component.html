@@ -1,20 +1,65 @@
 <!-- Desktop Navbar -->
+<div
+  class="absolute bottom-9 right-9 w-fit h-fit md:flex md:flex-col justify-end md:items-end pb-3 overflow-auto text-c2 hidden font-SpaceGrotesk z-10"
+>
+  <div class="parent flex flex-col items-end w-fit h-fit">
+    <div *ngFor="let navOption of currentNavOption">
+      <a
+        routerLink="/{{ navOption.path }}"
+        class="md:text-[4vw] lg:text-[2vw] opacity-20 tracking-[25px] font-SpaceGrotesk lg:hover:opacity-100 duration-100 lg:hover:text-[3vw] child"
+      >
+        {{ navOption.name }}
+      </a>
+    </div>
+    <h1
+      class="md:text-[4vw] lg:text-[2vw] opacity-20 tracking-[25px] font-SpaceGrotesk lg:hover:opacity-100 duration-100 cursor-default"
+    >
+      {{ routeName[0].name }}
+    </h1>
+  </div>
+</div>
+
+<!-- Mobile Navbar -->
+
+<div *ngIf="!mobileNav" class="md:hidden absolute top-5 right-6 text-c2 z-10">
   <div
-    class="absolute bottom-9 right-9 w-fit h-fit md:flex md:flex-col justify-end md:items-end pb-3 overflow-auto text-c2 hidden font-SpaceGrotesk z-10"
+    (click)="setMobileNav()"
+    class="w-fit h-fit text-xl opacity-30 cursor-pointer"
   >
-    <div class="parent flex flex-col items-end w-fit h-fit">
-      <div *ngFor="let navOption of currentNavOption">
-        <a
-          routerLink="/{{ navOption.path }}"
-          class="md:text-[4vw] lg:text-[2vw] opacity-20 tracking-[25px] font-SpaceGrotesk lg:hover:opacity-100 duration-100 lg:hover:text-[3vw] child"
-        >
-          {{ navOption.name }}
-        </a>
-      </div>
+    <fa-icon [icon]="menuIcon"></fa-icon>
+  </div>
+</div>
+<div
+  *ngIf="mobileNav"
+  class="absolute top-0 right-0 bottom-0 left-0 bg-c1/80 text-c2 md:hidden z-10 p-4"
+>
+  <div
+    class="backdrop-blur-sm w-full h-full border-[1px] border-gray-500 overflow-hidden flex flex-col items-center relative"
+  >
+    <div
+      (click)="setMobileNav()"
+      class="absolute top-1 right-2 w-fit h-fit text-xl opacity-30 cursor-pointer"
+    >
+      <fa-icon [icon]="xMarkIcon"></fa-icon>
+    </div>
+    <div class="absolute bottom-8 right-10">
       <h1
-        class="md:text-[4vw] lg:text-[2vw] opacity-20 tracking-[25px] font-SpaceGrotesk lg:hover:opacity-100 duration-100 cursor-default"
+        class="text-3xl tracking-[20px] opacity-25 font-SpaceGrotesk font-bold duration-100 cursor-default"
       >
         {{ routeName[0].name }}
       </h1>
     </div>
+    <div class="flex flex-col items-center justify-center w-full h-full">
+      <div class="flex flex-col gap-10 items-end">
+        <div *ngFor="let navOption of currentNavOption">
+          <a
+            routerLink="/{{ navOption.path }}"
+            class="text-3xl tracking-[20px] font-SpaceGrotesk font-bold duration-100 lg:hover:text-[3vw]"
+          >
+            {{ navOption.name }}
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
+</div>

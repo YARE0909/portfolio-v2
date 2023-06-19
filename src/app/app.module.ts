@@ -10,6 +10,7 @@ import { AboutComponent } from './components/about/about.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ProjectsComponent } from './components/projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     AboutComponent,
     SkillsComponent,
     ContactComponent,
-    NavbarComponent
+    NavbarComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +29,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
       {path: 'about', component: AboutComponent, data: { animationState: 'Two' }},
       {path: 'skills', component: SkillsComponent, data: { animationState: 'Three' }},
       {path: 'contact', component: ContactComponent, data: { animationState: 'Four' }},
+      {path: 'projects', component: ProjectsComponent, data: { animationState: 'Five' }},
     ]),
     FontAwesomeModule,
     BrowserAnimationsModule

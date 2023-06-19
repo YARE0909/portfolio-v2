@@ -4,34 +4,109 @@
   <div
     class="w-full h-full border-[1px] border-gray-500 p-8 text-c2 gradient overflow-hidden relative"
   >
-    <div class="top-4 left-4">
+    <div class="top-4 left-4 flex flex-col gap-5 w-full">
       <h1 class="font-bold text-4xl lg:text-8xl">What Can I Do?</h1>
-      <div class="pt-3">
-        <h1 class="text-xl font-bold opacity-85">
-          The following are but a scant few among the vast repertoire of skills
-          I possess. Additionally, I am proficient in coding across a diverse
-          array of programming languages, displaying a remarkable capacity for
-          swift acquisition and seamless adaptation.
-        </h1>
-      </div>
+      <h1 class="text-sm md:text-2xl font-bold">
+        I'm good at learning new languages quickly and adapting to different
+        situations.
+      </h1>
     </div>
     <!-- Desktop View -->
-    <div class="hidden lg:block">
-      <div class="container">
-        <div *ngFor="let skill of skills" class="card">
-          <h3 class="title text-3xl font-bold">{{ skill.skill }}</h3>
-          <div class="bar">
-            <div class="emptybar"></div>
-            <div class="filledbar"></div>
+    <div class="hidden lg:flex lg:flex-col">
+      <div class="pt-5 hidden lg:flex gap-5">
+        <div
+          [ngClass]="
+            language ? 'text-blue-500 underline underline-offset-8' : null
+          "
+          (click)="setLanguage()"
+        >
+          <h1 class="text-2xl font-bold opacity-85 cursor-pointer">
+            Languages
+          </h1>
+        </div>
+        <div
+          [ngClass]="
+            skill ? 'text-blue-500 underline underline-offset-8' : null
+          "
+          (click)="setSkill()"
+        >
+          <h1 class="text-2xl font-bold opacity-85 cursor-pointer">Skills</h1>
+        </div>
+      </div>
+      <div>
+        <div *ngIf="skill" class="container">
+          <div *ngFor="let skill of skills" class="card">
+            <h3 class="title text-3xl font-bold">{{ skill.skill }}</h3>
+            <div class="bar">
+              <div class="emptybar"></div>
+              <div class="filledbar"></div>
+            </div>
+            <div
+              class="w-full h-full flex items-center justify-center pt-20 m-4"
+            >
+              <img
+                src="{{ skill.icon }}"
+                alt="{{ skill.skill }}"
+                class="w-56"
+              />
+            </div>
           </div>
-          <div class="w-full h-full flex items-center justify-center pt-20 m-4">
-            <img src="{{ skill.icon }}" alt="{{ skill.skill }}" class="w-56" />
+        </div>
+        <div *ngIf="language" class="container">
+          <div *ngFor="let language of languages" class="card">
+            <h3 class="title text-3xl font-bold">{{ language.skill }}</h3>
+            <div class="bar">
+              <div class="emptybar"></div>
+              <div class="filledbar"></div>
+            </div>
+            <div
+              class="w-full h-full flex items-center justify-center pt-20 m-4"
+            >
+              <img
+                src="{{ language.icon }}"
+                alt="{{ language.skill }}"
+                class="w-56"
+              />
+            </div>
           </div>
         </div>
       </div>
     </div>
     <!-- Mobile View -->
-    <div class="lg:hidden w-full h-full flex justify-center"></div>
+    <div class="lg:hidden mt-8 flex flex-col gap-20 h-full">
+      <div>
+        <div>
+          <h1 class="text-3xl font-bold">Skills</h1>
+        </div>
+        <div class="Carousel">
+          <div *ngFor="let skill of skills" class="Block">
+            <div class="w-full h-full flex items-center justify-center m-4">
+              <img
+                src="{{ skill.icon }}"
+                alt="{{ skill.skill }}"
+                class="w-56"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <h1 class="text-3xl font-bold">Languages</h1>
+        </div>
+        <div class="Carousel2">
+          <div *ngFor="let language of languages" class="Block">
+            <div class="w-full h-full flex items-center justify-center m-4">
+              <img
+                src="{{ language.icon }}"
+                alt="{{ language.skill }}"
+                class="w-56"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <app-navbar></app-navbar>
 </div>
