@@ -6,15 +6,15 @@
     <div *ngFor="let navOption of currentNavOption">
       <a
         routerLink="/{{ navOption.path }}"
-        class="md:text-[4vw] lg:text-[2vw] opacity-20 tracking-[25px] font-SpaceGrotesk lg:hover:opacity-100 duration-100 lg:hover:text-[3vw] child"
+        class="md:text-[4vw] lg:text-[2vw] opacity-20 tracking-[25px] font-SpaceGrotesk lg:hover:opacity-100 duration-100 lg:hover:text-[3vw] child textShadow"
       >
         {{ navOption.name }}
       </a>
     </div>
     <h1
-      class="md:text-[4vw] lg:text-[2vw] opacity-20 tracking-[25px] font-SpaceGrotesk lg:hover:opacity-100 duration-100 cursor-default"
+      class="md:text-[4vw] lg:text-[2vw] opacity-20 tracking-[25px] font-SpaceGrotesk lg:hover:opacity-100 duration-100 cursor-default pr-6"
     >
-      {{ routeName[0].name }}
+      <fa-icon [icon]="menuIcon"></fa-icon>
     </h1>
   </div>
 </div>
@@ -42,9 +42,9 @@
     >
       <fa-icon [icon]="xMarkIcon"></fa-icon>
     </div>
-    <div class="absolute bottom-8 right-10">
+    <div class="absolute top-8 right-10">
       <h1
-        class="text-3xl tracking-[20px] opacity-25 font-SpaceGrotesk font-bold duration-100 cursor-default"
+        class="text-3xl font-extrabold tracking-[20px] textShadow font-SpaceGrotesk duration-100 cursor-default underline underline-offset-[20px]"
       >
         {{ routeName[0].name }}
       </h1>
@@ -54,7 +54,7 @@
         <div *ngFor="let navOption of currentNavOption">
           <a
             routerLink="/{{ navOption.path }}"
-            class="text-3xl tracking-[20px] font-SpaceGrotesk font-bold duration-100 lg:hover:text-[3vw]"
+            class="text-3xl tracking-[20px] textShadow font-SpaceGrotesk font-bold duration-100 lg:hover:text-[3vw]"
           >
             {{ navOption.name }}
           </a>

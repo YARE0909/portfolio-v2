@@ -17,7 +17,7 @@ export class NavbarComponent {
   currentNavOption!: navOptionsInterface[];
   menuIcon = faBars;
   xMarkIcon = faXmark;
-  mobileNav: boolean = false;
+  mobileNav: boolean = true;
 
   ngOnInit() {
     this.currentRoute = this.location.path();

@@ -41,3 +41,7 @@
   display: block;
   opacity: 0.1;
 }
+
+.textShadow {
+  text-shadow: 5px 5px 0px #d80707, -5px -5px 0px #071cd8;
+}
