@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faMailBulk, faPhoneVolume} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-contact',
@@ -13,4 +14,6 @@ export class ContactComponent {
   }
   linkedIn = faLinkedinIn;
   gitHub = faGithub;
+  mail = faMailBulk;
+  meet = faPhoneVolume;
 }
